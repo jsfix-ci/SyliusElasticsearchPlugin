@@ -12,7 +12,7 @@
         "symfony/webpack-encore-bundle": "^1.16",
         "symfony/proxy-manager-bridge": "^5.4 || ^6.0",
         "sylius/mailer-bundle":  "^1.8 || ^2.0@beta",
-        "babdev/pagerfanta-bundle": "^3.7"
+        "twig/extra-bundle": "^3.4"
     },
     "require-dev": {
         "behat/behat": "^3.7",

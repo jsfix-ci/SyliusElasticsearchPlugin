@@ -50,7 +50,7 @@ final class ListProductsByPartialNameAction
         $itemsResponse = ItemsResponse::createEmpty();
 
         if (null === $request->query->get('query')) {
-            return JsonResponse::create($itemsResponse->toArray());
+            return new JsonResponse($itemsResponse->toArray());
         }
 
         $products = $this->namedProductsFinder->findByNamePart($request->query->get('query'));
@@ -71,6 +71,6 @@ final class ListProductsByPartialNameAction
             ));
         }
 
-        return JsonResponse::create($itemsResponse->toArray());
+        return new JsonResponse($itemsResponse->toArray());
     }
 }
