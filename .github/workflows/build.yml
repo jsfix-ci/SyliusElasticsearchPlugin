@@ -21,23 +21,11 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: ["7.4", "8.0"]
-                symfony: ["^4.4", "^5.2"]
-                sylius: ["~1.9.0", "~1.10.0", "~1.11.0"]
+                php: ["8.0"]
+                symfony: ["^5.4", "6.0"]
+                sylius: ["~1.12.0"]
                 node: ["14.x"]
                 mysql: ["8.0"]
-
-                exclude:
-                    - sylius: ~1.9.0
-                      php: 8.0
-
-                    - sylius: ~1.10.0
-                      symfony: ^4.4
-                    # friendsofsymfony/elastica-bundle - package is locking php 7.x
-
-                    - sylius: ~1.11.0
-                      php: 7.4
-
         env:
             APP_ENV: test
             DATABASE_URL: "mysql://root:root@127.0.0.1/sylius?serverVersion=${{ matrix.mysql }}"
@@ -182,9 +170,9 @@ jobs:
             -   name: Run ECS
                 run: vendor/bin/ecs check src
 
-            -
-                name: Run PHPSpec
-                run: vendor/bin/phpspec run --ansi -f progress --no-interaction
+#            -
+#                name: Run PHPSpec
+#                run: vendor/bin/phpspec run --ansi -f progress --no-interaction
 
             -
                 name: Run Behat
