@@ -7,6 +7,6 @@
     "dist": "yarn encore production --config-name bitbag-plugin-dist"
   },
   "dependencies": {
-    "node-sass": "7.0.1"
+    "node-sass": "^8.0.0"
   }
 }
